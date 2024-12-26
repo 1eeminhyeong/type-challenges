@@ -1,1 +1,3 @@
-type Concat<T extends (any[] | readonly any[]), U extends any[]> = T extends [...infer restT] ? U extends [...infer restU] ? [...restT, ...restU] : [] : []
+type Tuple = readonly unknown[]
+
+type Concat<T extends Tuple, U extends Tuple> = [...T, ...U]
